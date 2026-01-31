@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 98%;
+    --foreground: 220 25% 10%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+    
+    --primary: 230 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 15% 94%;
+    --secondary-foreground: 220 25% 25%;
+    
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 50%;
+    
+    --accent: 230 60% 96%;
+    --accent-foreground: 230 70% 50%;
+    
+    --success: 145 65% 42%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 92% 15%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 230 70% 55%;
+    
+    --radius: 12px;
+    
+    --today: 230 70% 55%;
+    --task-high: 0 72% 51%;
+    --task-medium: 38 92% 50%;
+    --task-low: 145 65% 42%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  /* 按钮 - Taro迁移: Button */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-medium 
+           transition-all duration-200 active:scale-[0.97] disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary text-primary-foreground shadow-sm hover:opacity-90;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+  
+  .btn-ghost {
+    @apply btn hover:bg-accent text-muted-foreground hover:text-foreground;
+  }
+  
+  .btn-icon {
+    @apply btn w-10 h-10 p-0;
+  }
+  
+  .btn-sm { @apply h-9 px-3 text-sm; }
+  .btn-md { @apply h-11 px-5 text-base; }
+  .btn-lg { @apply h-12 px-6 text-base; }
+  
+  /* 卡片 - Taro迁移: View */
+  .card {
+    @apply rounded-2xl border bg-card text-card-foreground shadow-sm;
+  }
+  
+  /* 输入框 - Taro迁移: Input */
+  .input-field {
+    @apply w-full rounded-xl border border-input bg-background px-4 py-3
+           text-base placeholder:text-muted-foreground 
+           focus:outline-none focus:ring-2 focus:ring-ring/20 focus:border-primary
+           transition-all duration-200;
+  }
+  
+  /* 文本域 - Taro迁移: Textarea */
+  .textarea-field {
+    @apply input-field min-h-[120px] resize-none;
+  }
+  
+  /* 复选框 - Taro迁移: Checkbox */
+  .checkbox {
+    @apply w-5 h-5 rounded-md border-2 border-border 
+           flex items-center justify-center cursor-pointer
+           transition-all duration-200;
+  }
+  
+  .checkbox-checked {
+    @apply bg-primary border-primary;
+  }
+  
+  /* 标签 */
+  .tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium;
+  }
+  
+  .tag-primary { @apply bg-primary/10 text-primary; }
+  .tag-success { @apply bg-success/10 text-success; }
+  .tag-warning { @apply bg-warning/10 text-warning; }
+  .tag-destructive { @apply bg-destructive/10 text-destructive; }
+  
+  /* 日历日期 */
+  .calendar-day {
+    @apply w-10 h-10 rounded-xl flex items-center justify-center text-sm
+           cursor-pointer transition-all duration-150;
+  }
+  
+  .calendar-day-today {
+    @apply bg-primary text-primary-foreground font-semibold;
+  }
+  
+  .calendar-day-selected {
+    @apply ring-2 ring-primary ring-offset-2;
+  }
+  
+  .calendar-day-has-task {
+    @apply relative;
+  }
+  
+  .calendar-day-has-task::after {
+    @apply content-[''] absolute bottom-1 left-1/2 -translate-x-1/2 
+           w-1 h-1 rounded-full bg-primary;
+  }
+  
+  /* 底部导航 - Taro迁移: TabBar */
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 h-16 bg-card border-t
+           flex items-center justify-around px-4 pb-safe;
+  }
+  
+  .nav-item {
+    @apply flex flex-col items-center gap-1 py-2 px-4 rounded-xl
+           text-muted-foreground transition-colors;
+  }
+  
+  .nav-item-active {
+    @apply text-primary bg-accent;
+  }
+  
+  /* 动画 */
+  .animate-slide-up {
+    animation: slideUp 0.25s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
