@@ -1,104 +1,101 @@
-# PlanNote - 个人规划助手
+# PlanNote
 
-PlanNote 是一款集任务管理、日历视图和 WeChat 通知于一体的个人规划工具。帮助你高效管理日常任务和笔记，支持时间提醒功能并通过 WeChat 发送通知。
+PlanNote is an early-stage open-source personal planning assistant for tasks, notes, calendar views, reminders, and lightweight decision tracking. It is built with React, TypeScript, Vite, and Tailwind CSS.
 
-## 功能特性
+The project started as a practical daily planning tool and is now being prepared for a new development phase focused on AI-assisted productivity features.
 
-- 🗓️ **日历视图** - 直观的日历界面，查看每日任务和笔记
-- ✅ **任务管理** - 创建、编辑、标记完成任务
-- 📝 **笔记记录** - 按日期组织的笔记系统
-- ⏰ **时间提醒** - 任务时间到达时自动提醒
-- 📱 **WeChat 通知** - 通过 Server酱发送 WeChat 消息提醒
-- 🎨 **优先级标识** - 用 🔥 (urgent) 和 ☕ (chill) 区分任务优先级
-- 🔄 **数据持久化** - 使用 localStorage 保存数据
-- 📱 **PWA 支持** - 可安装到主屏幕，离线使用
+## Why This Project Exists
 
-## 技术栈
+Many personal planning tools are either too heavy for daily use or too simple to connect tasks, notes, reminders, and decision context. PlanNote aims to keep the workflow small and local-first while still supporting useful reminders and future AI assistance.
 
-- React 18 with TypeScript
-- Vite 构建工具
-- Tailwind CSS 样式
-- date-fns 日期处理
-- Lucide React 图标库
+## Features
 
-## 快速开始
+- Task management with date, time, priority, completion state, and reminders
+- Calendar view for browsing daily tasks and notes
+- Note records grouped by date
+- Browser notification fallback
+- WeChat reminder support through ServerChan
+- Local data persistence with `localStorage`
+- PWA support for installable use on mobile and desktop browsers
+- Decision and voting views for lightweight planning choices
 
-### 本地开发
+## Planned AI Features
 
-1. 安装依赖：
+The next phase of PlanNote will use OpenAI API credits to prototype practical user-facing features:
+
+- Break large tasks into smaller actionable steps
+- Summarize notes into daily or weekly planning context
+- Suggest priorities based on task dates, time, and urgency
+- Generate clearer reminder messages
+- Turn rough notes into structured tasks
+- Help users review unfinished work and plan the next day
+
+The goal is to publish the implementation openly so other developers can learn from a small, practical AI productivity app.
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- date-fns
+- Lucide React
+
+## Quick Start
+
 ```bash
 npm install
-```
-
-2. 启动开发服务器：
-```bash
 npm run dev
 ```
 
-3. 在浏览器中访问 `http://localhost:5173`
+Then open:
 
-### 构建生产版本
+```text
+http://localhost:5173
+```
+
+Build for production:
 
 ```bash
 npm run build
 ```
 
-构建产物将在 `dist/` 目录中生成。
+Preview the production build:
 
-## 部署
-
-此应用已配置为可在 Vercel 上一键部署。详情请参阅 `DEPLOY.md` 和 `FULL_DEPLOY_GUIDE.md`。
-
-## WeChat 通知配置
-
-1. 访问 [Server酱官网](https://sct.ftqq.com/)
-2. 关注公众号并获取 SendKey
-3. 在应用中输入 SendKey 并保存
-4. 创建任务时开启提醒功能，到时间会收到 WeChat 消息
-
-## 使用说明
-
-### 任务管理
-- 点击 "+" 添加新任务
-- 设置任务标题、时间、优先级
-- 选择是否需要 WeChat 提醒
-- 点击任务左侧复选框标记完成
-- 任务会按时间顺序排列
-
-### 笔记管理
-- 切换到笔记视图
-- 点击 "+" 添加笔记
-- 可为笔记添加标签
-- 笔记按日期组织
-
-### 日历导航
-- 使用左右箭头切换月份
-- 点击特定日期查看当天任务和笔记
-- 日期旁的圆点表示该日有任务或笔记
-
-## 文件结构
-
-```
-src/
-├── components/      # React 组件
-│   ├── Calendar.tsx
-│   └── TaskList.tsx
-├── hooks/           # 自定义 Hooks
-│   ├── useStorage.ts
-│   └── useReminder.ts
-├── types.ts         # TypeScript 类型定义
-├── lib/utils.ts     # 工具函数
-└── App.tsx          # 主应用组件
-public/
-├── manifest.json    # PWA 配置
-├── icon-192.png     # PWA 图标
-└── icon-512.png     # PWA 图标
+```bash
+npm run preview
 ```
 
-## PWA 功能
+## WeChat Reminder Setup
 
-此应用支持 PWA 功能，在移动设备上可以通过浏览器菜单添加到主屏幕，获得原生应用般的体验。
+PlanNote supports WeChat reminders through ServerChan.
+
+1. Create or open a ServerChan account.
+2. Get your personal SendKey.
+3. Enter the SendKey inside the app.
+4. Create a task with a reminder time.
+
+Do not commit a real SendKey to this repository. Use `sendkey.example.json` only as a placeholder reference.
+
+## Privacy And Security
+
+- Task and note data are stored locally in the browser.
+- Reminder keys should be treated as secrets.
+- The project does not require a backend for the core local planning workflow.
+- See [SECURITY.md](SECURITY.md) for responsible disclosure and known security priorities.
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for the current development plan.
+
+## Contributing
+
+Contributions, issues, and suggestions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Project Status
+
+PlanNote is an early-stage public open-source project. The current priority is to improve documentation, security hygiene, and the AI feature roadmap before the next round of development.
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
