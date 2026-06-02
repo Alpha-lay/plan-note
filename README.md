@@ -2,6 +2,11 @@
 
 PlanNote is an early-stage open-source personal planning assistant for tasks, notes, calendar views, reminders, and lightweight decision tracking. It is built with React, TypeScript, Vite, and Tailwind CSS.
 
+- Live demo: https://plan-note-rdh9.vercel.app
+- Roadmap: [ROADMAP.md](ROADMAP.md)
+- Security policy: [SECURITY.md](SECURITY.md)
+- Growth plan: [docs/GROWTH.md](docs/GROWTH.md)
+
 The project started as a practical daily planning tool and is now being prepared for a new development phase focused on AI-assisted productivity features.
 
 ## Why This Project Exists
@@ -32,6 +37,16 @@ The next phase of PlanNote will use OpenAI API credits to prototype practical us
 
 The goal is to publish the implementation openly so other developers can learn from a small, practical AI productivity app.
 
+## Demo Workflow
+
+A typical PlanNote workflow:
+
+1. Pick a date in the calendar.
+2. Add tasks with time, priority, and optional reminders.
+3. Record notes for the day.
+4. Review unfinished tasks and notes before planning the next day.
+5. Use planned AI features to summarize notes, break down tasks, and draft reminders.
+
 ## Tech Stack
 
 - React 18
@@ -60,11 +75,31 @@ Build for production:
 npm run build
 ```
 
+Run the local quality check:
+
+```bash
+npm run check
+```
+
 Preview the production build:
 
 ```bash
 npm run preview
 ```
+
+## Deployment
+
+The public demo is deployed on Vercel:
+
+```text
+https://plan-note-rdh9.vercel.app
+```
+
+For Vercel, the default build settings are enough:
+
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
 
 ## WeChat Reminder Setup
 
@@ -94,7 +129,7 @@ Contributions, issues, and suggestions are welcome. See [CONTRIBUTING.md](CONTRI
 
 ## Project Status
 
-PlanNote is an early-stage public open-source project. The current priority is to improve documentation, security hygiene, and the AI feature roadmap before the next round of development.
+PlanNote is an early-stage public open-source project. The current priority is to improve documentation, security hygiene, demo quality, and the AI feature roadmap before the next round of development.
 
 ## License
 
