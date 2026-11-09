@@ -1,6 +1,6 @@
 # PlanNote
 
-PlanNote is an early-stage open-source personal planning assistant for tasks, notes, calendar views, reminders, and lightweight decision tracking. It is built with React, TypeScript, Vite, and Tailwind CSS.
+PlanNote is an early-stage open-source personal planning assistant for tasks, notes, calendar views, and reminders. It is built with React, TypeScript, Vite, and Tailwind CSS.
 
 - Live demo: https://plan-note-rdh9.vercel.app
 - Roadmap: [ROADMAP.md](ROADMAP.md)
@@ -22,7 +22,6 @@ Many personal planning tools are either too heavy for daily use or too simple to
 - WeChat reminder support through ServerChan
 - Local data persistence with `localStorage`
 - PWA support for installable use on mobile and desktop browsers
-- Decision and voting views for lightweight planning choices
 
 ## Planned AI Features
 
